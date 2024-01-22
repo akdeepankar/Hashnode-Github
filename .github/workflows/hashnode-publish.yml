@@ -19,8 +19,11 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Install Axios
+        run: npm install axios
+
       - name: Publish Blog Post
         run: node .github/workflows/publish-blog-post.js
         env:
-          HASHNODE_API_KEY: ${{ secrets.f9c53393-fd71-441e-8644-574e49bb9b67 }}
+          HASHNODE_API_KEY: ${{ secrets.HASHNODE_API_KEY }}
           # Add other environment variables if needed
