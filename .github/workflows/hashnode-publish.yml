@@ -1,0 +1,26 @@
+name: Publish Blog Post on Hashnode
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Publish Blog Post
+        run: node publish-blog-post.js
+        env:
+          HASHNODE_API_KEY: ${{ secrets.f9c53393-fd71-441e-8644-574e49bb9b67 }}
+          # Add other environment variables if needed
