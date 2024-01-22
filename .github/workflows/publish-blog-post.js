@@ -2,7 +2,7 @@ const axios = require('axios');
 
 // Hashnode GraphQL API endpoint
 const hashnodeApiEndpoint = 'https://api.hashnode.com';
-
+ 
 // Function to publish a blog post on Hashnode
 async function publishBlogPost() {
   try {
